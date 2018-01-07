@@ -1,0 +1,183 @@
+@import '~font-awesome/css/font-awesome.css';
+@import '~@/styles/variables.g';
+
+.ui-button {
+  background-color: $primary-color;
+
+  &.ui-button-secondary {
+    &.ui-state-default {
+      border-color: $primary-color;
+      color: $primary-color;
+    }
+
+    &:enabled:hover {
+      background-color: lighten($primary-color, 10%);
+      border-color: lighten($primary-color, 10%);
+      color: #fff;
+    }
+  }
+}
+
+.ui-widget-content .ui-button,
+.ui-widget.ui-button,
+.ui-button {
+  border-color: $primary-color;
+  background-color: $primary-color;
+}
+
+.ui-splitbutton.ui-button-secondary .ui-button {
+  &.ui-state-default {
+    border-color: $primary-color;
+    color: $primary-color;
+  }
+
+  &:enabled:hover {
+    background-color: lighten($primary-color, 10%);
+    border-color: lighten($primary-color, 10%);
+    color: #fff;
+  }
+}
+
+.ui-widget.ui-button:not(.ui-state-disabled):hover {
+  background-color: lighten($primary-color, 10%);
+  border-color: lighten($primary-color, 10%);
+}
+
+.ui-tabview {
+  &.ui-widget-content {
+    background-color: transparent;
+  }
+
+  &.ui-tabview-top > .ui-tabview-nav {
+    padding: 0.2em 0 0;
+
+    li.ui-state-active {
+      border-bottom: 1px solid transparent;
+      margin-bottom: 0;
+    }
+  }
+
+  .ui-tabview-panel {
+    border-width: 1px;
+
+    &.ui-widget-content {
+      border-color: #eaeaea;
+      background-color: #fff;
+    }
+  }
+}
+
+.ui-state-default {
+  border-color: #dfdfdf;
+  color: #fff;
+
+  a {
+    color: #6a6a6c;
+  }
+}
+
+.ui-state-highlight {
+  background-color: darken($primary-color, 10%);
+}
+
+.ui-state-active {
+  border-color: #eaeaea;
+
+  a {
+    color: $primary-color;
+  }
+}
+
+.ui-togglebutton.ui-button.ui-state-active,
+.ui-selectbutton .ui-button.ui-state-active {
+  background-color: $primary-color;
+  border-color: darken($primary-color, 10%);
+}
+
+.ui-multiselect {
+  .ui-multiselect-label {
+    margin-bottom: 0;
+    color: $primary-color;
+  }
+
+  .ui-multiselect-trigger {
+    color: $primary-color;
+  }
+}
+
+.ui-chkbox-label {
+  color: $primary-color;
+}
+
+.ui-chkbox-box {
+  &.ui-state-active,
+  &.ui-state-active.ui-state-focus {
+    background-color: darken($primary-color, 10%);
+    border-color: darken($primary-color, 20%);
+  }
+}
+
+.ui-paginator {
+  .ui-paginator-page.ui-state-active {
+    background-color: $primary-color;
+    border-color: darken($primary-color, 10%);
+  }
+
+  .ui-paginator-rpp-options {
+    color: $primary-color;
+  }
+}
+
+.ui-datatable {
+  th.ui-state-default {
+    background-color: $primary-color;
+  }
+
+  .ui-datatable-thead > tr > th,
+  .ui-datatable-tfoot > tr > td,
+  .ui-datatable-data > tr > td {
+    border: none;
+  }
+
+  tbody > tr.ui-widget-content {
+    border: none;
+  }
+
+  .ui-datatable-scrollable-view.ui-datatable-unfrozen-view {
+    border-right: 1px solid #d5d5d5;
+
+    .ui-datatable-data.ui-widget-content {
+      border-left: none;
+    }
+  }
+
+  &.ui-paginator-left .ui-paginator {
+    text-align: left;
+  }
+
+  &.ui-reorderable .ui-datatable-thead > tr > th {
+    cursor: move;
+  }
+
+  tbody > tr.ui-widget-content.ui-state-highlight {
+    background-color: #48b148;
+  }
+
+  .ui-sortable-column-icon {
+    cursor: pointer;
+  }
+
+  .ui-column-filter {
+    color: #555;
+  }
+
+  th.ui-sortable-column:not(.ui-state-active):hover {
+    background-color: lighten($primary-color, 10%);
+    border-color: lighten($primary-color, 10%);
+    color: #fff;
+  }
+}
+
+.auto-width {
+  width: auto;
+}

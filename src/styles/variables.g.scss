@@ -1,0 +1,37 @@
+// Colors
+$gray-dark: #292b2c !default;
+$gray-light: #636c72 !default;
+$blue: #0275d8 !default;
+$primary-color: #4ab148 !default;
+
+// Others
+$font-family-base: "Roboto", "Trebuchet MS", Arial, Helvetica, sans-serif;
+$font-size-base: 16px;
+$font-weight-base: normal !default;
+$font-weight-bold: bold !default;
+$line-height-base: 1.5 !default;
+$body-color: $gray-dark !default;
+$body-bg: #fff !default;
+$text-muted: $gray-light !default;
+
+$dt-font-weight: $font-weight-bold !default;
+
+// Links
+//
+// Style anchor elements.
+
+$link-color: $blue !default;
+$link-decoration: none !default;
+$link-hover-color: darken($link-color, 15%) !default;
+$link-hover-decoration: underline !default;
+
+// Tables
+//
+// Customizes the `.table` component with basic values, each used across all table variations.
+
+$table-cell-padding: 0.75rem !default;
+
+// z-index level
+$zIndex-top: 100;
+$zIndex-medium: 50;
+$zIndex-normal: 0;

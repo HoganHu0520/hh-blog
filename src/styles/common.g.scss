@@ -1,0 +1,51 @@
+@import "variables.g";
+@import "reboot.g";
+@import "responsive.g";
+@import "icons.g";
+@import "fonts.g";
+@import "theme.g";
+
+html {
+  min-height: 100%;
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+
+  body {
+    background-color: #f1f4f5;
+    min-height: 100%;
+    position: relative;
+    height: auto;
+    overflow: hidden;
+  }
+}
+
+// firefox
+::-moz-placeholder {
+  font-size: 1.125rem;
+  color: #d8d8d8;
+  text-align: center;
+}
+
+//IE10-IE11
+:-ms-input-placeholder {
+  font-size: 1.125rem !important;
+  color: #d8d8d8 !important;
+  text-align: center !important;
+}
+
+//Chrome, Safari
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+.hc-page {
+  position: relative;
+  transition: slideIn 1.5s ease-in-out;
+  animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+  0% { left: 100%; }
+  100% { left: 0; }
+}
