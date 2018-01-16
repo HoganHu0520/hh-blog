@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 
-import { LoginPageComponent } from './pages/login/page';
+import { LoginPageComponent } from './login/containers/login-page.component';
 
 let routers: Routes = [];
 export default routers = [

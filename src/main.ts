@@ -8,6 +8,10 @@ import { RouterModule }   from '@angular/router';
 import { HttpModule, Http, JsonpModule } from "@angular/http";
 import { CookieService } from 'angular2-cookie/services/cookies.service';
 
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+
+import { reducers, metaReducers } from './reducers';
 import { AppCompnent } from './app';
 import Routers from './routers';
 import { requestOptionsProvider } from './services/default-request-options.service';
@@ -15,8 +19,9 @@ import { ServiceLocator } from './utils/ServiceLocator';
 import { APP_CONFIG } from './types';
 
 import CoreModule from './core';
-import { StoreModule } from './store';
-import { PageModule } from './pages';
+// import { StoreModule } from './store.old';
+// import { PageModule } from './pages';
+import { AuthModule } from './login/auth.module';
 
 import './styles/common.g.scss';
 
@@ -38,8 +43,10 @@ if (process.env.ENV === 'production' ) {
     HttpModule,
     JsonpModule,
     CoreModule,
-    StoreModule,
-    PageModule,
+    StoreModule.forRoot(reducers, { metaReducers }),
+    EffectsModule.forRoot([]),
+    // StoreModule,
+    AuthModule.forRoot(),
   ],
   providers: [
       { provide: LocationStrategy, useClass: HashLocationStrategy },

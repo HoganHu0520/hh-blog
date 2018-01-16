@@ -2,7 +2,7 @@ import { Component, EventEmitter, HostBinding, HostListener } from '@angular/cor
 import { PlatformLocation, LocationStrategy }from '@angular/common';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Title } from '@angular/platform-browser';
-import { select } from '@angular-redux/store';
+// import { select } from '@angular-redux/store.old';
 import { Observable } from 'rxjs/Observable';
 
 import { CookieService } from 'angular2-cookie/services/cookies.service';
@@ -23,7 +23,7 @@ export class AppCompnent {
   @HostBinding('class') public cssClass = '';
   @HostBinding('attr.size') size = '';
 
-  @select(['self', 'value'])
+  // @select(['self', 'value'])
   readonly name: Observable<string>;
 
   private router: Router;

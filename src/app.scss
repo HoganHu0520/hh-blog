@@ -1,5 +1,6 @@
-@import "~@/styles/mixin.g";
-@import "~@/styles/fonts.g";
+@import "./styles/mixin.g";
+@import "./styles/fonts.g";
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 .router-container {
   min-height: 100%;
