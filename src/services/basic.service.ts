@@ -1,7 +1,6 @@
-import { Injectable, EventEmitter } from '@angular/core';
-import { URLSearchParams, Headers, RequestOptions, Http, Response } from '@angular/http';
+import { Injectable } from '@angular/core';
+import {HttpRequest, HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 
-import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 
@@ -15,20 +14,20 @@ import { APP_CONFIG, AppConfig } from '@/types';
 @Injectable()
 export class BasicService {
   baseurl: string;
-  private headers = new Headers({
+  private headers = new HttpHeaders({
     'Content-Type': 'application/json',
     'Authorization': 'Aug'
   });
-  private params = new URLSearchParams();
-  private options: RequestOptions;
-  private http: Http;
+  private params = new HttpParams();
+  private options: Object;
+  private http: HttpClient;
   private config: AppConfig;
 
   constructor(private broadCaster: BroadCaster) {
     this.config = ServiceLocator.injector.get(APP_CONFIG);
     this.baseurl = `${this.config.serviceAddress}/api`
-    this.http = ServiceLocator.injector.get(Http);
-    this.options = new RequestOptions({ headers: this.headers, search: this.params });
+    this.http = ServiceLocator.injector.get(HttpClient);
+    this.options = { headers: this.headers, params: this.params };
   }
 
   /**
@@ -80,11 +79,11 @@ export class BasicService {
       ServiceLocator.accessToken.then(token => {
         let responser;
         if (token) {
-          this.headers = new Headers({
+          this.headers = new HttpHeaders({
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`,
           });
-          this.options = new RequestOptions({ headers: this.headers, search: this.params});
+          this.options = { headers: this.headers, params: this.params};
         }
         switch (method) {
           case 'get':
@@ -124,7 +123,7 @@ export class BasicService {
    *
    * @return            Promise   response for request.
    */
-  requestWithCustomOptions(method: string, url: string, options: RequestOptions = this.options, body?: any) {
+  requestWithCustomOptions(method: string, url: string, options: Object = this.options, body?: any) {
     let responser;
     switch (method) {
       case 'get':

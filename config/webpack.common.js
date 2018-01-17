@@ -84,9 +84,15 @@ module.exports = {
   },
 
   plugins: [
+    // new webpack.ContextReplacementPlugin(
+    //   /angular(\\|\/)core(\\|\/)@angular/,
+    //   path.resolve(__dirname, '../src') // location of your src
+    // ),
+
     new webpack.ContextReplacementPlugin(
-      /angular(\\|\/)core(\\|\/)@angular/,
-      path.resolve(__dirname, '../src') // location of your src
+      /\@angular(\\|\/)core(\\|\/)esm5/,
+      path.resolve(__dirname, '../src'),
+      {}
     ),
 
     new webpack.optimize.CommonsChunkPlugin({

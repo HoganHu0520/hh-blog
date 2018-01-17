@@ -1,8 +1,7 @@
-import { Component, EventEmitter, HostBinding, HostListener } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 import { PlatformLocation, LocationStrategy }from '@angular/common';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
-// import { select } from '@angular-redux/store.old';
 import { Observable } from 'rxjs/Observable';
 
 import { CookieService } from 'angular2-cookie/services/cookies.service';
@@ -28,7 +27,6 @@ export class AppCompnent {
 
   private router: Router;
   private activateRoute: ActivatedRoute;
-  private screenWidth: number = 0;
 
   constructor(
     private platformLocation: PlatformLocation,
@@ -40,16 +38,6 @@ export class AppCompnent {
     let rootParam = this.parseQueryString();
     this.router = router;
     this.activateRoute = activateRoute;
-
-    this.size = screenSize();
-  }
-
-  @HostListener('window:resize', ['$event'])
-  /**
-   * add class tag of screen size
-   */
-  onResize(event: any) {
-    this.size = screenSize();
   }
 
   /**
@@ -68,17 +56,3 @@ export class AppCompnent {
   };
 }
 
-function screenSize() {
-  const width = window.innerWidth;
-  let classTag = '';
-  if (width >= 90.063 * 16) {
-    classTag = 'screen-xl';
-  } else if (width >= 64.063 * 16) {
-    classTag = 'screen-lg';
-  } else if (width >= 40.063 * 16) {
-    classTag = 'screen-md';
-  } else {
-    classTag = 'screen-sm'
-  }
-  return classTag;
-}
