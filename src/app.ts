@@ -12,7 +12,7 @@ import { CookieService } from 'angular2-cookie/services/cookies.service';
     Title
   ],
   template: `
-    <div class="router-container" min-height-mode="without-footer">
+    <div class="router-container">
       <router-outlet></router-outlet>
     </div>
    `,
