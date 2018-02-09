@@ -15,6 +15,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@angular/language-service": "latest",
     "@types/node": "latest",
     "a1atscript": "latest",
     "angular2-template-loader": "latest",
