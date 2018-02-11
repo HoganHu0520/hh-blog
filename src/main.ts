@@ -4,8 +4,8 @@ import { NgModule, Injector } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule }   from '@angular/router';
-import {HttpClientModule} from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'angular2-cookie/services/cookies.service';
 
 import { StoreModule } from '@ngrx/store';
@@ -25,9 +25,9 @@ import './styles/common.g.scss';
 // config object
 let config = require('config/config.dev.json');
 
-if (process.env.ENV === 'production' ) {
+if (process.env.ENV === 'production') {
   config = require('config/config.production.json');
-} else if (process.env.ENV === 'staging' ) {
+} else if (process.env.ENV === 'staging') {
   config = require('config/config.staging.json');
 }
 
@@ -44,10 +44,10 @@ if (process.env.ENV === 'production' ) {
     AuthModule.forRoot(),
   ],
   providers: [
-      { provide: LocationStrategy, useClass: HashLocationStrategy },
-      { provide: APP_CONFIG, useValue: config},
-      CookieService,
-    ],
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    { provide: APP_CONFIG, useValue: config },
+    CookieService,
+  ],
   declarations: [
     AppCompnent,
   ],

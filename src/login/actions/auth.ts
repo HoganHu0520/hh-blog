@@ -12,19 +12,19 @@ export enum AuthActionTypes {
 export class Login implements Action {
   readonly type = AuthActionTypes.Login;
 
-  constructor(public payload: Authenticate) {}
+  constructor(public payload: Authenticate) { }
 }
 
 export class LoginSuccess implements Action {
   readonly type = AuthActionTypes.LoginSuccess;
 
-  constructor(public payload: { user: User }) {}
+  constructor(public payload: { user: User }) { }
 }
 
 export class LoginFailure implements Action {
   readonly type = AuthActionTypes.LoginFailure;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class LoginRedirect implements Action {

@@ -1,5 +1,5 @@
 import { Component, HostBinding } from '@angular/core';
-import { PlatformLocation, LocationStrategy }from '@angular/common';
+import { PlatformLocation, LocationStrategy } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { Observable } from 'rxjs/Observable';

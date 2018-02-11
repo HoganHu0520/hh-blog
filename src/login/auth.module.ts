@@ -37,4 +37,4 @@ export class AuthModule {
     EffectsModule.forFeature([AuthEffects]),
   ],
 })
-export class RootAuthModule {}
+export class RootAuthModule { }

@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import {HttpRequest, HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import { HttpRequest, HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 
 import { ServiceLocator } from '@/utils/ServiceLocator';
-import { BroadCaster} from '@/core/services/BroadCaster';
+import { BroadCaster } from '@/core/services/BroadCaster';
 import { APP_CONFIG, AppConfig } from '@/types';
 
 /**
@@ -83,7 +83,7 @@ export class BasicService {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`,
           });
-          this.options = { headers: this.headers, params: this.params};
+          this.options = { headers: this.headers, params: this.params };
         }
         switch (method) {
           case 'get':

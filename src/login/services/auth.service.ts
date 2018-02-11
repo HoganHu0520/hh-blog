@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class AuthService {
-  constructor() {}
+  constructor() { }
 
   login({ username, password }: Authenticate): Observable<User> {
     /**
